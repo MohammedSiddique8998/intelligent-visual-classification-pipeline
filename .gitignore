@@ -4,10 +4,12 @@ __pycache__/
 venv/
 data/
 outputs/
+checkpoints/
 *.pt
 *.pth
 *.ckpt
 *.zip
+*.csv
 .DS_Store
 Thumbs.db
 *.log

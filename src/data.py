@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import numpy as np
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
@@ -45,7 +46,7 @@ def validate_dataset_structure(data_dir: Path) -> None:
         raise FileNotFoundError(f"Dataset folders missing:\n{formatted}")
 
 
-def create_dataloaders(data_dir: Path, batch_size: int, image_size: int, num_workers: int = 2):
+def build_dataloaders(data_dir: Path, batch_size: int, image_size: int, num_workers: int = 2):
     validate_dataset_structure(data_dir)
     train_transform, eval_transform = build_transforms(image_size)
 
@@ -79,3 +80,19 @@ def create_dataloaders(data_dir: Path, batch_size: int, image_size: int, num_wor
         pin_memory=pin_memory,
     )
     return train_loader, val_loader, test_loader
+
+
+def class_counts(dataset: datasets.ImageFolder) -> dict[str, int]:
+    counts = {class_name: 0 for class_name in dataset.classes}
+    for _, label in dataset.samples:
+        counts[dataset.classes[label]] += 1
+    return counts
+
+
+def make_class_weights(dataset: datasets.ImageFolder) -> torch.Tensor:
+    counts = np.array([class_counts(dataset)[class_name] for class_name in dataset.classes], dtype=np.float32)
+    weights = counts.sum() / (len(counts) * np.maximum(counts, 1.0))
+    return torch.tensor(weights, dtype=torch.float32)
+
+
+create_dataloaders = build_dataloaders
