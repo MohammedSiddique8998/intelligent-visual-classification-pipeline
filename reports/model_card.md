@@ -2,7 +2,7 @@
 
 ## Model Family
 
-Three-class chest X-ray image classification using:
+Three-class chest X-ray image classification pipeline using:
 
 - a custom convolutional neural network,
 - optional DenseNet121 feature extraction,

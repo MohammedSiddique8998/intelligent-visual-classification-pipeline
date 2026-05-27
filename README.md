@@ -1,8 +1,8 @@
-# Applied AI Image Classification
+# Intelligent Visual Classification Pipeline
 
 Clean, reproducible computer vision portfolio project for multiclass chest X-ray image classification.
 
-This repository is a corrected portfolio version of an Applied AI learning project. It is not a copy of a coursework submission, and it does not include university briefs, answer sheets, grading feedback, raw reports, zipped submissions, restricted datasets or trained checkpoint files.
+This repository is a professional portfolio implementation of an image-classification workflow. It does not include private briefs, answer sheets, grading feedback, raw reports, zipped submissions, restricted datasets or trained checkpoint files.
 
 ## Current Repository Status
 
@@ -166,7 +166,7 @@ outputs/
   normalised_confusion_matrix.png
 ```
 
-All plots should be generated from the current code and current experiment outputs. Old screenshots from the earlier coursework-style report were removed to avoid mismatched or unsupported results.
+All plots should be generated from the current code and current experiment outputs. Old screenshots from earlier draft reporting were removed to avoid mismatched or unsupported results.
 
 ## Confusion Matrix Interpretation Guide
 
@@ -215,7 +215,7 @@ python src/evaluate.py --data-dir data --checkpoint outputs/custom_cnn/best_mode
 ## Repository Structure
 
 ```text
-applied-ai-image-classification/
+intelligent-visual-classification-pipeline/
   README.md
   requirements.txt
   src/
@@ -254,4 +254,4 @@ applied-ai-image-classification/
 
 ## Academic and Data Ethics
 
-This public repository is designed as a portfolio-safe implementation. It intentionally excludes private university material and restricted data. Any future dataset use should respect licensing, consent, privacy and clinical governance requirements.
+This public repository is designed as a portfolio-safe implementation. It intentionally excludes private source material and restricted data. Any future dataset use should respect licensing, consent, privacy and clinical governance requirements.

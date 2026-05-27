@@ -1,6 +1,6 @@
 # Notebook Guidance
 
-The original rough notebook is not published because it was created in a university assessment context and may contain coursework-specific material.
+The original rough notebook is not published because it contained draft-specific material that is not suitable for a public portfolio repository.
 
 For a portfolio-safe notebook, use the scripts in `src/` as the source of truth and create a concise walkthrough with:
 
